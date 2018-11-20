@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "311708752230",
+    "firebase_url": "https://glag-church.firebaseio.com",
+    "project_id": "glag-church",
+    "storage_bucket": "glag-church.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311708752230:android:fb4bbb877425f76e",
+        "android_client_info": {
+          "package_name": "org.creatorslane.glagchurch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311708752230-cdfr06c7l81aania396p870nmrbp3uvh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.creatorslane.glagchurch",
+            "certificate_hash": "b295de7be408b8cc10a908542b2a84bde36b63bd"
+          }
+        },
+        {
+          "client_id": "311708752230-kar15olmf6llirjkodkr6jldu278q2bi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.creatorslane.glagchurch",
+            "certificate_hash": "7b0e826259c02fb0ba476d0bfd1bb8dc592836f5"
+          }
+        },
+        {
+          "client_id": "311708752230-bmjb2dvga8a21mkj3gphie3e79hvcede.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.creatorslane.glagchurch",
+            "certificate_hash": "7e95888e1a3c083dfebd9e51960f26e7e6900238"
+          }
+        },
+        {
+          "client_id": "311708752230-tglrudl7dvsg2c3mfc0veo1ul10si90c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGxwGR-s8Ccc2sYGDUJhQlaBNIGC4D4Oc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311708752230-tglrudl7dvsg2c3mfc0veo1ul10si90c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
