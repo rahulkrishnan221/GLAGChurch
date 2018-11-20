@@ -23,6 +23,7 @@ allprojects {
         maven {
             url "http://dl.bintray.com/mobisystech/maven"
         }
+        maven { url 'https://jitpack.io' }
     }
 }
 

@@ -40,6 +40,9 @@ import org.json.JSONObject;
 import java.net.URL;
 import java.util.ArrayList;
 
+import technolifestyle.com.imageslider.FlipperLayout;
+import technolifestyle.com.imageslider.FlipperView;
+
 import static org.creatorslane.glagchurch.language.preference;
 import static org.creatorslane.glagchurch.language.saveit;
 
@@ -54,6 +57,7 @@ public class bookdisp extends AppCompatActivity {
     ArrayList<String> myDataset1=new ArrayList<>();
     private int STORAGE_PERMISSION_CODE=1;
     String storagebabu="";
+    FlipperLayout flipperLayout;
 
 
     @Override
@@ -76,11 +80,24 @@ public class bookdisp extends AppCompatActivity {
         // myDataset1.add("test3");
 
 
+        flipperLayout=(FlipperLayout)findViewById(R.id.flipper_layout1);
+        setLayout();
 
 
 
 
-
+    }
+    private void setLayout()
+    {
+        String url[]=new String[]{"https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796",
+                "https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796",
+                "https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796"};
+        for (int i=0;i<3;i++)
+        {
+            FlipperView flipperView=new FlipperView(getBaseContext());
+            flipperView.setImageUrl(url[i]);
+            flipperLayout.addFlipperView(flipperView);
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
