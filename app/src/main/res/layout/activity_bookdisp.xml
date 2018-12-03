@@ -14,7 +14,7 @@
         <technolifestyle.com.imageslider.FlipperLayout
             android:id="@+id/flipper_layout1"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="180dp">
         </technolifestyle.com.imageslider.FlipperLayout>
 
         <android.support.v7.widget.RecyclerView

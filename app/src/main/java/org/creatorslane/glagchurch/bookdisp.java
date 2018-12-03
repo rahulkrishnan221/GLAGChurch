@@ -81,18 +81,18 @@ public class bookdisp extends AppCompatActivity {
 
 
         flipperLayout=(FlipperLayout)findViewById(R.id.flipper_layout1);
-        setLayout();
+        new fetchslides().execute();
 
 
 
 
     }
-    private void setLayout()
+    private void setLayout(String url[])
     {
-        String url[]=new String[]{"https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796",
-                "https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796",
-                "https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796"};
-        for (int i=0;i<3;i++)
+     //   String url[]=new String[]{"https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796",
+       //         "https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796",
+         //       "https://firebasestorage.googleapis.com/v0/b/test-150af.appspot.com/o/temp6.jpeg?alt=media&token=ce44356f-26d9-4571-9669-febde42f4796"};
+        for (int i=0;i<url.length;i++)
         {
             FlipperView flipperView=new FlipperView(getBaseContext());
             flipperView.setImageUrl(url[i]);
@@ -255,6 +255,7 @@ public class bookdisp extends AppCompatActivity {
                 SharedPreferences sf4=getSharedPreferences(preference, Context.MODE_PRIVATE);
                 String lang = sf4.getString(saveit,"");
                 JSONArray json = jsonbookfinder.readJsonFromUrl("http://workshop.creatorslane.org/Wesley/Books/dir.php");
+                System.err.println(json.toString());
                 for (int i=0;i<json.length();i++)
                 {
 
@@ -297,6 +298,38 @@ public class bookdisp extends AppCompatActivity {
             }
 
             last();
+
+        }
+
+
+    }
+    class fetchslides extends AsyncTask<Void,Void,Void> {
+
+String value[];
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            try {
+                JSONObject json = jsonhelper.readJsonFromUrl("http://workshop.creatorslane.org/Wesley/Books/config.json");
+             bannerlinkgenerator b=new bannerlinkgenerator();
+                 value=b.generator(json.get("BannerLoc").toString(),Integer.parseInt(json.get("BannerCount").toString()));
+
+            }
+            catch (Exception r)
+            {
+                System.err.println(r);
+
+            }
+
+            return null;
+
+
+        }
+        @Override
+        protected void onPostExecute(Void result)
+        {
+
+        setLayout(value);
+
 
         }
 
